@@ -2,7 +2,12 @@ package Strategy;
 
 public class TestClass {
 
-	/**
+	/**Mục đích: khi có quá nhiều lớp con cùng overidde 1 hàm,
+	 * việc bảo dưỡng, thay đổi hàm đó là rất khó khăn, nhất là khi muốn thay đổi
+	 * ở lớp cha.  
+	 * Vậy thì thay vì nhiều lớp con khác nhau, mỗi lớp con lại overidde lại hàm đó,
+	 * ta đặt hàm đó riêng ra thành 1 lớp thuật toán.
+	 * gọi là Has-a
 	 * @param args
 	 */
 	public static void main(String[] args) {

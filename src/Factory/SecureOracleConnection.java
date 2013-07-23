@@ -1,9 +1,7 @@
 package Factory;
 
 public class SecureOracleConnection extends Connection{
-	static{
-		SecureFactory.registerConnection("Oracle", SecureOracleConnection.class);
-	}
+
 	public SecureOracleConnection(){
 		
 	}

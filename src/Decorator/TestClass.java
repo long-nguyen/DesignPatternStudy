@@ -4,8 +4,9 @@ public class TestClass {
 	/**
 	 * The ComputerDecorator is a decorator class, it lets the inherited class to modify the description function
 	 * Ví dụ như sau: Lớp Computer thực thi hàm description. Tuy nhiên tương lai, khách hàng lúc thì thích thêm cái này
-	 * lúc thì thích thêm cái nọ vào hàm description, vậy có thể dùng Strategy.
-	 * Tuy nhiên cũng có thể tạo decorator như sau:
+	 * lúc thì thích thêm cái nọ vào hàm description. Ta ko muốn thay đổi hàm gốc, mà vẫn muốn thêm bớt các chwucs năng cho hàm đó. 
+	 * Tuy nhiên cũng có thể tạo decorator, mỗi decorator có 1 đối tượng để trang trí là object gốc,
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

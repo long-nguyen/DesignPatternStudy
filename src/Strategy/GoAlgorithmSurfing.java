@@ -1,6 +1,6 @@
 package Strategy;
 
-public class GoAlgorithmSurfing implements GoAlgorithm{
+public class GoAlgorithmSurfing implements IGoAlgorithm{
 
 	@Override
 	public void go() {

@@ -8,8 +8,8 @@ package Strategy;
  *
  */
 public  class Vehicle {
-	private GoAlgorithm goAlgorithm;
-	public void setGoAlgorithm(GoAlgorithm go){
+	private IGoAlgorithm goAlgorithm;
+	public void setGoAlgorithm(IGoAlgorithm go){
 		goAlgorithm=go;
 	}
 	

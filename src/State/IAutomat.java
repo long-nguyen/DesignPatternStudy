@@ -1,15 +1,13 @@
 package State;
 
+//This is the interface for declaring automat's function, not related to State pattern.
 public interface IAutomat {
 
 	public void gotApplication();
 	public void checkApplication();
 	public void rentApartment();
-	public State setState(State s);
-	public State getWaitingState();
-	public State getGotApplicationState();
-	public State getApartmentRentedState();
-	public State getFullyRentedState();
+	public void setState(IState s);
+	public IState getState();
 	public int getCount();
 	public void setCount(int n);
 }

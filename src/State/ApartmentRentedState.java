@@ -1,10 +1,10 @@
 package State;
 
-public class ApartmentRentedState implements State {
+public class ApartmentRentedState implements IState {
 
 	IAutomat automat;
 	
-	public ApartmentRentedState(Automat a) {
+	public ApartmentRentedState(IAutomat a) {
 		automat=a;
 	}
 
@@ -27,9 +27,9 @@ public class ApartmentRentedState implements State {
 	@Override
 	public String dispensekeys() {
 		if(automat.getCount()<=0){
-			automat.setState(automat.getFullyRentedState());
+			automat.setState(new ApartmentRentedState(automat));
 		}else {
-			automat.setState(automat.getWaitingState());
+			automat.setState(new WaitingState(automat));
 		}
 		return "Here are your keys!";
 	}

@@ -1,6 +1,6 @@
 package State;
 
-public class FullyRentedState implements State {
+public class FullyRentedState implements IState {
 
 	IAutomat automat;
 	

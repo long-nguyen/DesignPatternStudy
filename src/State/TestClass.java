@@ -8,6 +8,11 @@ package State;
  * và khó biết đâu là các ranh giới, làm sao để chia nhỏ mã nguồn.
  * Gợi ý là chia thành các trạng thái khác nhau và rời rạc từng phần.
  * 
+ * How to understand State pattern:
+ * + Mỗi state là 1 class, tự nó biết phải ứng xử như thế nào khi gặp các input khác nhau
+ * + Automat và IAutomat là đối tượng cần quản lý, nó chứa state(state này được thay đổi tự động bởi các state class khác)
+ * 
+ * 
  * @author long-nguyen
  *
  */

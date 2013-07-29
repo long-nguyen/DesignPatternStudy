@@ -2,12 +2,12 @@ package State;
 
 import java.util.Random;
 
-public class GotApplicationState implements State {
+public class GotApplicationState implements IState {
 
 	IAutomat automat;
 	Random random;
 	
-	public GotApplicationState(Automat a) {
+	public GotApplicationState(IAutomat a) {
 		automat=a;
 		random=new Random(System.currentTimeMillis());
 	}
@@ -21,10 +21,10 @@ public class GotApplicationState implements State {
 	public String checkAppication() {
 		int yesno=random.nextInt() %10;
 		if(yesno>4&&automat.getCount()>0){
-			automat.setState(automat.getApartmentRentedState());
+			automat.setState(new ApartmentRentedState(automat));
 			return "Congratulation, you were approved";
 		}else{
-			automat.setState(automat.getWaitingState());
+			automat.setState(new WaitingState(automat));
 			return "Sorry, you were not approved!";
 		}
 	}

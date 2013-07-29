@@ -1,23 +1,23 @@
 package State;
 
+/**
+ * Class này quản lý state, chỉ duy nhất đối tượng state là liên quan đến State pattern mà thôi, 
+ * còn lại đều là hàm cho người dùng sử dụng
+ * @author long-nguyen
+ *
+ */
+
 public class Automat implements IAutomat{
 
-	State waitingState;
-	State gotApplicationState;
-	State apartmentRentedState;
-	State fullyRentedState;
-	State state;	//now state
-	int count;
+	private IState state;	//now state
+	int count;				//number of apartment
 
 	public Automat(int n){
 		count=n;
-		waitingState=new WaitingState(this);
-		gotApplicationState=new GotApplicationState(this);
-		apartmentRentedState=new ApartmentRentedState(this);
-		state=waitingState;
+		state=new WaitingState(this);
 	}
 	
-	
+	//Got application, checkApplication, rentApartment là hàm cho người dùng làm việc, ko liên quan đến Pattern
 	@Override
 	public void gotApplication() {
 		System.out.println(state.gotApplication());
@@ -35,28 +35,12 @@ public class Automat implements IAutomat{
 	}
 
 	@Override
-	public State setState(State s) {
-		return state=s;
+	public void setState(IState s) {
+		 state=s;
 	}
-
-	@Override
-	public State getWaitingState() {
-		return waitingState;
-	}
-
-	@Override
-	public State getGotApplicationState() {
-		return gotApplicationState;
-	}
-
-	@Override
-	public State getApartmentRentedState() {
-		return apartmentRentedState;
-	}
-
-	@Override
-	public State getFullyRentedState() {
-		return fullyRentedState;
+	
+	public IState getState(){
+		return state;
 	}
 
 	@Override

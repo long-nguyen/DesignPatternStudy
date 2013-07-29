@@ -13,14 +13,26 @@ package State;
  */
 public class TestClass {
 	
+	Automat automat;
+	RentalMethods rentalsMethod;
+
+	
 	public static void main(String []args){
 		new TestClass();
 	}
 
 	public TestClass(){
+		/**Unscalable ways(means taking lots of effort when adding new state to rentalmethod class 
 		rentalsMethod=new RentalMethods(9);
 		rentalsMethod.getApplication();
-		rentalsMethod.checkApplication();
+		rentalsMethod.checkApplication(); 
+		*/
+		
+		//Test function
+		automat=new Automat(9);
+		automat.gotApplication();
+		automat.checkApplication();
+		automat.rentApartment();
 	}
-	RentalMethods rentalsMethod;
+	
 }

@@ -1,5 +1,6 @@
 package Strategy;
 
+
 public class GoAlgorithmSurfing implements IGoAlgorithm{
 
 	@Override

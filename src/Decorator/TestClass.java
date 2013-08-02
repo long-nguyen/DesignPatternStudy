@@ -21,6 +21,7 @@ public class TestClass {
 		comp=new Power(comp);
 		comp=new Monitor(comp);
 		//Finally print out what you have decorated. You avoided modifying the core Computer class
+		//Sau cùng thì nó vẫn là cái computer thôi, nhưng được lắp thêm mấy thứ linh tinh
 		System.out.print(comp.description());
 	}
 

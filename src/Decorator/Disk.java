@@ -5,7 +5,6 @@ public class Disk extends ComputerDecorator {
 	/*
 	 * The disk is the decorator of computer, it add new feature to description functionu
 	 */
-	Computer comp;
 	public Disk(Computer computer){
 		comp=computer;
 	}

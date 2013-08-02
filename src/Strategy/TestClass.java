@@ -2,12 +2,24 @@ package Strategy;
 
 public class TestClass {
 
-	/**Mục đích: khi có quá nhiều lớp con cùng overidde 1 hàm,
-	 * việc bảo dưỡng, thay đổi hàm đó là rất khó khăn, nhất là khi muốn thay đổi
-	 * ở lớp cha.  
-	 * Vậy thì thay vì nhiều lớp con khác nhau, mỗi lớp con lại overidde lại hàm đó,
-	 * ta đặt hàm đó riêng ra thành 1 lớp thuật toán.
-	 * gọi là Has-a
+	/**_Mục đích: Chuyển đổi từ is-a sang has-a 
+	 * _Ví dụ: Bạn có 1 cái Vehicle, nó có hàm go() để "chạy",
+	 * Bạn cần tạo ra 1 cái Boat, nó cũng go(), vậy là extends Vehicle.
+	 * Bạn cần tạo Boat2, cũng go(), lại extends Boat...
+	 *..Có thể có quá nhiều lớp khác nhau liên quan cùng có hàm go(), chỉ khác ở cách xử lý..
+	 * Vậy tách riêng bọn thuật toán đó ra, người dùng có thể tùy nghi lựa chọn thuật toán cần dùng
+	 *
+	 *_Vấn đề ko hiểu: Vì sao ko tạo nhiều class con rồi override hàm go(), như thế thì có sao? 
+	 *
+	 *Vì thực ra 2 vấn đề là hoàn toàn khác nhau, inheritance là is-a, tức là 1 thứ này là 1 thứ khác, rất lằng nhằng quan hệ cha con
+	 *tuy nhiên với has-a, bất cứ ai cũng có thể có năng lực đó.
+	 *Tùy theo cách suy nghĩ mà thôi
+	 *ví dụ, tự nhiên VehicleCar và VehiclePlane có hàm runOnLand(),bạn ko thể vứt hàm này vào Vehicle được vì VehicleBoat is-a Vehicle, mà nó thì ko thể runOnLand()
+	 *vậy nên bạn chỉ có thể tạo ra 1 class chứa hàm runOnLand(), và ai cũng có thể sở hữu runOnLand() đó.
+	 *Mở rộng ra cho Strategy, thì runonLand() có thể được cài đặt khác nhau, và VehicleCar với VehiclePlane có thể cùng gọi runOnLand()
+	 *nhưng cách thực thi sẽ khác nhau
+	 *
+	 *Áp dụng của Strategy thường là ở thời gian thực, khi save file thì cùng 1 hàm save(), nhưng  save file theo định dạng gì thì tùy chọn 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -24,11 +36,12 @@ public class TestClass {
 		 * You can apply functions when running application(which could not be done using inheritance)
 		 * So, you can see that the boat now can fly and surf
 		 */
-		VehicleBoat boat2=new VehicleBoat();
-		boat2.setGoAlgorithm(new GoAlgorithmFly());
-		boat2.go();
-		boat2.setGoAlgorithm(new GoAlgorithmSurfing());
-		boat2.go();
+		Vehicle myVehicle=new Vehicle();
+		myVehicle.setGoAlgorithm(new GoAlgorithmSurfing());
+		myVehicle.go();
+		//If you want it to fly, it turns to be a plane
+		myVehicle.setGoAlgorithm(new GoAlgorithmFly());
+		myVehicle.go();
 	}
 
 }

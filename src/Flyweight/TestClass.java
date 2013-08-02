@@ -2,7 +2,12 @@ package Flyweight;
 /**
  * Mẫu hạng ruồi
  * Vấn đề với Singleton là ko thể Subclass, và lại dùng biến static.
- * Dùng flyweight để tạo ra ít đối tượng hơn, chỉ hoạt động khi cần, ở những context nhất định
+ * Dùng flyweight để tạo ra ít đối tượng hơn, chỉ hoạt động khi cần, ở những context nhất định.
+ * 
+ * 
+ * Ví dụ đơn giản:với 1 trình soạn thảo văn bản, trường hợp mà mỗi kí tự có font, màu, cỡ khác nhau là hoàn toàn có thể xảy ra.
+ * Ta ko thể để mỗi 1 kí tự là 1 object được vì số kí tự là rất lớn.
+ * Thay vào đó ta có thể đặt một object tên là glyph, chứa màu, font, cỡ, và vị trí của kí tự. Sẽ chỉ có duy nhất 1 glyph object mà thôi
  * @author long-nguyen
  *
  */
